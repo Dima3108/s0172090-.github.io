@@ -1,30 +1,126 @@
 <!DOCTYPE html>
+
 <html>
     <head>
-       
+
         <meta charset="utf-8"/>
         <title>Задание 1</title>
+
     </head>
+
+
     <body>
-        <form>
+      <ol>
+        <li>
+          <p id="#o_a">
+            ССылки
+
+          </p>
+
+        </li>
+        <li>
+          <p id="#f_a">Форма
+          </p>
+        </li>
+      </ol>
+      <hr/>
+    <ol id="o_a">
+      <li>
+        <a href="http://example.com">Example1</a>
+      </li>
+      <li>
+        <a href="https://example.com">Example2</a>
+      </li>
+      <li>
+        <a href="ftp://uor_file.txt">Файл без пороля</a>
+      </li>
+      <li>
+        <a href="ftp://usewr@password/privatedata.txt">Файл  с авторизацией</a>
+      </li>
+        <li>
+          <a href="https://example.com/page_h1">Фрагмент сайта</a>
+        </li>
+        <li>
+          <a href="Index.html">HOME</a>
+        </li>
+        <li>
+          <a href="Index.html?id=7us_n=5f">Ссылка с 2 параметрами</a>
+        </li>
+        <li>
+          <a>Без href</a>
+        </li>
+        <li>
+          <a href="">Пустой href</a>
+        </li>
+        <li>
+
+          <a href="Index.html" rel="nofollow">Ссылка запрещенная для поисквиков</a>
+
+      </li>
+
+       <li>
+         <a href="./netLeel.html">На уровень выше текущей</a>
+       </li>
+       <li>
+         <a href="./next/l.html">На 2 уровня выше</a>
+       </li>
+       <li>
+         <a href="myIMG.jpg">Image</a>
+       </li>
+           <li>
+             <map name="Navigation">
+               <area shape="circle" alt="Computer" href="Index.html" coords="34,56,78,90">
+                 <a href="Index.html">Ссылка map</a>
+
+             </map>
+           </li>
+           <li>
+             <a href="private.html">Относительная в текущем катологе</a>
+           </li>
+           <li>
+             <a href="/about/info.html">Относительная about</a>
+           </li>
+           <li>
+             <div>
+               Здесь выможете перейти на <a href="Index.html">главную</a> страницу . Это контекстная ссылка
+
+             </div>
+           </li>
+           <li>
+             <a href="/private.html">Сокращеннная на внутреннею</a>
+           </li>
+           <li>
+                <p id="#f_a">Фрагмент страницы</p>
+           </li>
+    </ol>
+    <noindex>
+
+
+        <a href="Index.html">Неидексируемая ссылка</a>
+
+
+     </noindex>
+<hr/>
+<hr/>
+        <form id="f_a">
             <div style="background-color:white ;">
 
-            
+
             <strong>Ваше имя:</strong>
-            <input type="text">
+            <input type="text" id="us_n">
             <hr style="background-color: white;border-color: white;border-bottom-color:white;border-top-color: white;
             border-left-color: white;border-right-color: white;flood-color: white;">
         </div>
                 <div style="background-color:white ;">
-                
-                
+
+
                     <strong>Ваш email:</strong>
                     <input type="email">
                     <hr>
                 </div>
                 <div style="background-color:white ;">
-                
-                
+
+
                     <strong>Ваша дата рождения:</strong>
                     <input type="date">
                     <hr style="background-color: white;border-color: white;border-bottom-color:white;border-top-color: white;
@@ -34,9 +130,9 @@
                     <h5>Пол</h5>
                     <div style="background-color:white ;">
                         <input type="radio" value="1" name="pol" id="r1">
-                      <label>М </label>  
+                      <label>М </label>
                         <input type="radio" value="1" name="pol" id="r2" >
-                  <label>Ж</label>  
+                  <label>Ж</label>
                     </div>
                   <hr style="background-color: white;background-color: white; border-bottom-color:white;border-top-color: white;
             border-left-color: white;border-right-color: white;flood-color: white;">
@@ -72,13 +168,15 @@
                     <label>Биография:</label>
                     <hr>
                     <textarea></textarea>
-                    
+
                 </div>
                 <div style="background-color:white ;">
  <input type="checkbox" >
  <label>С контрактом ознакомлен</label>
                 </div>
-               <hr>
+               <hr/>
+               <hr/>
+               <hr/>
                <button type="submit" style="background-color:royalblue ;">Отправить</button>
         </form>
     </body>
