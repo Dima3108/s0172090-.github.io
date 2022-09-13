@@ -44,7 +44,7 @@
           <a href="Index.html">HOME</a>
         </li>
         <li>
-          <a href="Index.html?id=7us_n=5f">Ссылка с 2 параметрами</a>
+          <a href="Index.html?fio=user&mail=5@f">Ссылка с 2 параметрами</a>
         </li>
         <li>
           <a>Без href</a>
@@ -65,15 +65,16 @@
          <a href="./next/l.html">На 2 уровня выше</a>
        </li>
        <li>
-         <a href="myIMG.jpg">Image</a>
-       </li>
-           <li>
-             <map name="Navigation">
-               <area shape="circle" alt="Computer" href="Index.html" coords="34,56,78,90">
-                 <a href="Index.html">Ссылка map</a>
+           <img src="hel.png" usemap="#Navigation"  />
+           <map name="Navigation" id="fotostyle1" >
+               <area shape="circle" alt="Computer"  coords="50,70,40" href="Index.html">
+               <area shape="rect" alt="Computer" coords="40,40,40,40" href="Index.html" >
+               <area shape="poly" alt="Computer" coords="60,60,70,70" href="Index.html" />
+               <!-- <a href="Index.html">Ссылка map</a>--->
 
-             </map>
-           </li>
+           </map>
+       </li>
+          
            <li>
              <a href="private.html">Относительная в текущем катологе</a>
            </li>
@@ -107,7 +108,7 @@
 
 
             <strong>Ваше имя:</strong>
-            <input type="text" id="us_n">
+            <input type="text" id="us_n" name="fio">
             <hr style="background-color: white;border-color: white;border-bottom-color:white;border-top-color: white;
             border-left-color: white;border-right-color: white;flood-color: white;">
         </div>
@@ -115,21 +116,21 @@
 
 
                     <strong>Ваш email:</strong>
-                    <input type="email">
+                    <input type="email" name="mail">
                     <hr>
                 </div>
                 <div style="background-color:white ;">
 
 
                     <strong>Ваша дата рождения:</strong>
-                    <input type="date">
+                    <input type="date" name="data_">
                     <hr style="background-color: white;border-color: white;border-bottom-color:white;border-top-color: white;
             border-left-color: white;border-right-color: white;flood-color: white; ">
                 </div>
                 <div style="background-color:white ;">
                     <h5>Пол</h5>
                     <div style="background-color:white ;">
-                        <input type="radio" value="1" name="pol" id="r1">
+                        <input type="radio" value="1" name="pol" id="r1" checked="checked" >
                       <label>М </label>
                         <input type="radio" value="1" name="pol" id="r2" >
                   <label>Ж</label>
@@ -140,7 +141,7 @@
                 <div style="background-color:white ;">
                     <h5>Количество конечностей</h5>
                     <div style="background-color:white ;">
-                        <input type="radio" value="1" name="count_con" id="r3">
+                        <input type="radio" value="1" name="count_con" id="r3" checked="checked">
                         <label>1</label>
                         <input type="radio" value="2" name="count_con" id="r4">
                         <label>2</label>
@@ -175,6 +176,11 @@
  <label>С контрактом ознакомлен</label>
                 </div>
                <hr/>
+            <select name="other[]" multiple="multiple">
+                <option value="1">Бессмертие</option>
+                <option value="2">Прохождение сквозь стены</option>
+                <option selected value="3">Левитация</option>
+            </select>
                <hr/>
                <hr/>
                <button type="submit" style="background-color:royalblue ;">Отправить</button>
