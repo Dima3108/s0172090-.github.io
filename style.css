@@ -46,3 +46,9 @@ width:100%; background-color:aqua; padding: 10px; height:120px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
 }
+.ol_st{
+  background-color:greenyellow;
+  color:magenta;
+  font-size: 26px;
+
+}
