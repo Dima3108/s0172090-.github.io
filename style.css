@@ -14,3 +14,18 @@ width:100%; background-color:aqua; padding: 10px; height:120px;
   font-style: oblique;
   color: purple;
 }
+.FOTH{
+  color: navy;
+  background-color: rgb(99, 98, 98);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 37px;
+  font-style: initial;
+}
+.mbody{
+  background-color: aquamarine;
+}
+.but-sumbit_res{
+  font-size: 29px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: oblique;
+}
