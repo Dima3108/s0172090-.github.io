@@ -58,10 +58,14 @@
 
 .form_body {
     background-color: slategrey;
-
+   
+    order: 1;
 }
 
 .table_st {
+    order: 1;
+  
+    flex-direction: column;
     background-color: azure;
    
     margin-left: auto;
@@ -116,6 +120,8 @@ align-content: center;
 }
 
 .form_cl {
+  
+    order: 2;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
