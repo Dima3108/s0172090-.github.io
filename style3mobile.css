@@ -44,7 +44,10 @@
     font-size: 37px;
     font-style: initial;
 }
-
+.exampleflex{
+    display: flex;
+    
+}
 .mbody {
     background-color: aquamarine;
 
@@ -62,8 +65,8 @@
     order: 1;
 }
 
-.table_st {
-    order: 1;
+.exampleflex.table_st {
+    
   
     flex-direction: column;
     background-color: azure;
@@ -71,11 +74,11 @@
     margin-left: auto;
     margin-right: auto;
    font-weight: device-width;
-    flex: 1;
-    order: 1;
+    flex: 2;
+    order: 0;
 align-content: center;
     text-align: center;
-    flex-direction: column;
+   
 }
 
 .td1 {
@@ -119,9 +122,9 @@ align-content: center;
     margin-right: auto;
 }
 
-.form_cl {
+.exampleflex.form_cl {
   
-    order: 2;
+    order: 1;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
