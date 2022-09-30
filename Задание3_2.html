@@ -7,6 +7,22 @@
     <meta charset="utf-8" />
     <title>Задание 3</title>
     <link rel="stylesheet" href="style3mobile.css">
+    <!--<script type="text/javascript" src="Задание3_2"></script>-->
+
+  <script>
+    function bul(){
+      let div_ = document.createElement("div");
+    div_.textContent = "Область таблицы";
+    const sim = '"';
+    div_.innerHTML = "<table></table>";
+      var d=document.getElementById("js_con");
+       d.appendChild(div_);
+           
+   
+    }
+    
+</script>
+
 
     <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 800px)">
 </head>
@@ -20,31 +36,17 @@
     </div>
 </header>
 
-<body style="margin:0;" class="mbody">
-    <div>
-        <!--<ol class="ol_st">
-      <li class="ol_st">-->
+<body style="margin:0;" class="mbody" >
         <div class="ol_st">
-            <hr class="ol_st" />
-
-            <a href="#o_a" class="ol_st">
+            
+            <a  class="ol_st">
                 ССылки
-
             </a>
-
-
-
-            <!-- </li>
-    <li class="ol_st">-->
-            <a href="#t_sw" class="ol_st">Таблица</a>
-            <!--   </li>
-    <li class="ol_st">-->
-            <a href="#f_a" class="ol_st">
+                   
+            <a  class="ol_st">Таблица</a>
+            <a  class="ol_st">
                 Форма
             </a>
-
-            <!--  </li>
-    </ol>-->
         </div>
         <div class="main_con">
             <ol id="o_a">
@@ -93,7 +95,7 @@
                         <area shape="circle" alt="Computer" coords="50,70,40" href="Index.html">
                         <area shape="rect" alt="Computer" coords="40,40,40,40" href="Index.html">
                         <area shape="poly" alt="Computer" coords="60,60,70,70" href="Index.html" />
-                        <!-- <a href="Index.html">Ссылка map</a>--->
+                       
 
                     </map>
                 </li>
@@ -126,12 +128,173 @@
             </noindex>
             <hr />
         </div>
-      
-        
-    </div>
-    <div id="js_content">
+        <div id="js_con" ></div>
+        <script >
+             let div_ = document.createElement("div");
+            
+                div_.textContent = "Область таблицы";
+               
+                div_.innerHTML = "<table></table><form></form>";
+                var d = document.getElementById("js_con");
+                d.appendChild(div_);
+        </script>
+     <!--   <script media="screen and (max-width: 800px)">
+            let div_ = document.createElement("div");
 
-    </div>
+            div_.textContent = "Область таблицы";
+           
+            div_.innerHTML = "<form></form><table></table>";
+            var d = document.getElementById("js_con");
+            d.appendChild(div_);
+        </script>-->
+        <script>
+            
+            var table = document.querySelector("table");
+            table.className="table_st";
+                var df = document.createDocumentFragment();
+
+                for (var i = 0; i < 5; i++) {
+                    var td = document.createElement("td");
+                    var tr = document.createElement("tr");
+                    td.textContent = i;
+                    td.className=(i%2==0)?"td1":"td2";
+                    tr.appendChild(td);
+
+                    df.appendChild(tr);
+                }
+
+                table.appendChild(df);
+        </script>
+        <script>
+            var form=document.querySelector("form");
+            form.className="form_body form_cl";
+            form.id="f_a";
+        const cont1=['Ваше имя:','Ваш email:','Ваша дата рождения:'];
+        const types_inp1=['text','email','date'];
+        const inp_names=['fio','mail','data_'];
+        var hr_=document.createElement("hr");
+        hr_.className=form.className;
+      for(var m=0;m<cont1.length;m++){
+        var dv_=document.createElement("div");
+        dv_.className=form.className;
+        var stro_=document.createElement("strong");
+        stro_.textContent=cont1[m];
+        stro_.className=dv_.className;
+        dv_.appendChild(stro_);
+        var inp_=document.createElement("input");
+        inp_.type=types_inp1[m];
+        inp_.name=inp_names[m];
+        dv_.appendChild(inp_);
+        dv_.appendChild(hr_);
+        form.appendChild(dv_);
+      }
+      //Выбор пола
+      var divP=document.createElement("div");
+      divP.className="form_body";
+      var H5=document.createElement("h5");
+      H5.textContent="Выберите пол";
+      H5.className=divP.className;
+      divP.appendChild(H5);
+      var divP2=document.createElement("div");
+      divP2.className=divP.className;
+      const radio_but_type='radio';
+      const radio_but_value='1';
+      const pols=['М','Ж'];
+      const IDs_radio=['r1','r2'];
+
+      for(var i=0;i<2;i++){
+var radio_b=document.createElement("input");
+radio_b.type=radio_but_type;
+radio_b.className="form_body";
+radio_b.id=IDs_radio[i];
+radio_b.value=i;
+radio_b.name="pol";
+if(i==0){
+    radio_b.checked="checked";
+}
+divP2.appendChild(radio_b);
+var lable_rad=document.createElement("label");
+lable_rad.textContent=pols[i];
+lable_rad.className=radio_b.className;
+divP2.appendChild(lable_rad);
+      }
+      divP.appendChild(divP2);
+      form.appendChild(divP);
+      //Количество конечностей
+      var div_Con1=document.createElement("div");
+      div_Con1.className="form_body";
+      var H52=document.createElement("h5");
+      H52.textContent="Количество конечностей";
+      div_Con1.appendChild(H52);
+      var div_Con2=document.createElement("div");
+      div_Con2.className=div_Con1.className;
+      for(var i=0;i<10;i++){
+            var rad_but_con=document.createElement("input");
+            rad_but_con.type=radio_but_type;
+            rad_but_con.value=i;
+            rad_but_con.name="count_con";
+            rad_but_con.className=div_Con2.className;
+            rad_but_con.id="r"+(i+2);
+            if(i==0){
+                rad_but_con.checked= "checked";
+            }
+            div_Con2.appendChild(rad_but_con);
+           var count_lab=document.createElement("label");
+           count_lab.textContent=(i+1);
+           count_lab.className=div_Con1.className;
+           div_Con2.appendChild(count_lab);
+      }
+      div_Con1.appendChild(div_Con2);
+      div_Con1.appendChild(hr_);
+      form.appendChild(div_Con1);
+      //биография
+      var div_BIO=document.createElement("div");
+      div_BIO.className="form_body";
+      var LAB_BIO=document.createElement("label");
+      LAB_BIO.textContent="Биография";
+      LAB_BIO.className=div_BIO.className;
+      div_BIO.appendChild(LAB_BIO);
+      div_BIO.appendChild(hr_);
+      var TEXT_AREA=document.createElement("textarea");
+      div_BIO.appendChild(TEXT_AREA);
+      form.appendChild(div_BIO);
+      //С контрактом озн
+      var div_check=document.createElement("div");
+      div_check.className="form_body";
+      var check_b=document.createElement("input");
+      check_b.type="checkbox";
+      div_check.appendChild(check_b);
+      var labl_check=document.createElement("label");
+      labl_check.className=div_check.className;
+      labl_check.textContent="С контрактом ознакомлен";
+      div_check.appendChild(labl_check);
+      form.appendChild(div_check);
+      form.appendChild(hr_);
+      //Сверхспособности
+      var SELECT_=document.createElement("select");
+      SELECT_.name="other[]";
+      SELECT_.multiple="multiple";
+      const sel_vals=['Бессмертие','Прохождение сквозь стены','Левитация'];
+      for(var i=0;i<3;i++){
+        var OPTION_=document.createElement("option");
+        OPTION_.value=i;
+        OPTION_.text=sel_vals[i];
+        if(i==2){
+          OPTION_.selected;
+        }
+        SELECT_.appendChild(OPTION_);
+        
+      }
+      form.appendChild(SELECT_);
+      for(var q=0;q<2;q++)
+         form.appendChild(hr_);
+         var but_sumbit=document.createElement("button");
+         but_sumbit.type="sumbit";
+         but_sumbit.className="but-sumbit_res";
+         but_sumbit.textContent="Отправить";
+
+         form.appendChild(but_sumbit);
+        </script>
 </body>
 <footer class="FOTH">
     © Павлов Дмитрий Павлович 2022
