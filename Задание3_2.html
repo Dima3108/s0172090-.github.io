@@ -133,8 +133,12 @@
              let div_ = document.createElement("div");
             
                 div_.textContent = "Область таблицы";
-               
-                div_.innerHTML = "<table></table><form></form>";
+               if(screen.width>=800){
+                 div_.innerHTML = "<table></table><form></form>";
+               }
+               else{
+                div_.innerHTML = "<form></form><table></table>";
+               }
                 var d = document.getElementById("js_con");
                 d.appendChild(div_);
         </script>
@@ -150,6 +154,7 @@
         <script>
             
             var table = document.querySelector("table");
+            table.width=screen.width;
             table.className="table_st";
                 var df = document.createDocumentFragment();
 
