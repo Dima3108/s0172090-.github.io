@@ -118,22 +118,22 @@
                 </div>
             </li>
             <li>
-                <a href="/private.html">Сокращеннная на внутреннею</a>
+                <a href="/private.html" class="btn btn-info">Сокращеннная на внутреннею</a>
             </li>
             <li>
-                <p id="#f_a">Фрагмент страницы</p>
+                <p id="#f_a" class="btn btn-info">Фрагмент страницы</p>
             </li>
         </ol>
         <noindex>
 
 
-            <a href="Index.html">Неидексируемая ссылка</a>
+            <a href="Index.html" class="btn btn-info">Неидексируемая ссылка</a>
 
 
         </noindex>
         <hr />
     </div>
-    <div id="js_con" class="btn btn-primary"></div>
+    <div id="js_con" class="container"></div>
     
     <script>
         
@@ -189,7 +189,7 @@
         if (screen.width > 960) {
             screen.width = 960;
         }
-        form.className = "container";
+        form.className = "container form-control";
         form.id = "f_a";
         const cont1 = ['Ваше имя:', 'Ваш email:', 'Ваша дата рождения:'];
         const types_inp1 = ['text', 'email', 'date'];
@@ -201,7 +201,7 @@
             dv_.className = form.className;
             var stro_ = document.createElement("strong");
             stro_.textContent = cont1[m];
-            stro_.className = dv_.className;
+            stro_.className = " form-control" + dv_.className+" form_cl";
             dv_.appendChild(stro_);
             var inp_ = document.createElement("input");
             inp_.type = types_inp1[m];
@@ -249,13 +249,13 @@
         H52.textContent = "Количество конечностей";
         div_Con1.appendChild(H52);
         var div_Con2 = document.createElement("div");
-        div_Con2.className = div_Con1.className;
+        div_Con2.className = div_Con1.className+"row";
         for (var i = 0; i < 10; i++) {
             var rad_but_con = document.createElement("input");
             rad_but_con.type = radio_but_type;
             rad_but_con.value = i;
             rad_but_con.name = "count_con";
-            rad_but_con.className = div_Con2.className;
+            rad_but_con.className = div_Con2.className +"form-check-input col";
             rad_but_con.id = "r" + (i + 2);
             if (i == 0) {
                 rad_but_con.checked = "checked";
@@ -263,7 +263,7 @@
             div_Con2.appendChild(rad_but_con);
             var count_lab = document.createElement("label");
             count_lab.textContent = (i + 1);
-            count_lab.className = div_Con1.className;
+            count_lab.className = div_Con1.className +"form-check-label";
             div_Con2.appendChild(count_lab);
         }
         div_Con1.appendChild(div_Con2);
