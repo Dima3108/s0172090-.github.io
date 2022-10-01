@@ -41,58 +41,58 @@
 </head>
 
 
-<body style="margin:0;" class="mbody">
-    <div class="ol_st ">
+<body style="margin:0;" class="mbody container">
+    <div class=" row">
 
-        <a class="ol_st">
+        <a class=" col btn btn-light">
             ССылки
         </a>
 
-        <a class="ol_st">Таблица</a>
-        <a class="ol_st">
+        <a class=" col btn btn-light">Таблица</a>
+        <a class=" col btn btn-light">
             Форма
         </a>
     </div>
     <div class="main_con">
-        <ol id="o_a">
-            <li>
-                <a href="http://example.com">Example1</a>
+        <ol id="o_a row">
+            <li >
+                <a href="http://example.com" class="btn btn-secondary col">Example1</a>
             </li>
             <li>
-                <a href="https://example.com">Example2</a>
+                <a href="https://example.com" class="btn btn-secondary col">Example2</a>
             </li>
             <li>
-                <a href="ftp://uor_file.txt">Файл без пороля</a>
+                <a href="ftp://uor_file.txt" class="btn btn-secondary col">Файл без пороля</a>
             </li>
             <li>
-                <a href="ftp://usewr@password/privatedata.txt">Файл с авторизацией</a>
+                <a href="ftp://usewr@password/privatedata.txt" class="btn btn-danger col">Файл с авторизацией</a>
             </li>
             <li>
-                <a href="https://example.com/page_h1">Фрагмент сайта</a>
+                <a href="https://example.com/page_h1" class="btn btn-secondary col">Фрагмент сайта</a>
             </li>
             <li>
-                <a href="Index.html">HOME</a>
+                <a href="Index.html" class="btn btn-primary col">HOME</a>
             </li>
             <li>
-                <a href="Index.html?fio=user&mail=5@f">Ссылка с 2 параметрами</a>
+                <a href="Index.html?fio=user&mail=5@f" class="btn btn-secondary col">Ссылка с 2 параметрами</a>
             </li>
             <li>
-                <a>Без href</a>
+                <a class="btn btn-secondary col">Без href</a>
             </li>
             <li>
-                <a href="">Пустой href</a>
+                <a href="" class="btn btn-secondary col">Пустой href</a>
             </li>
             <li>
 
-                <a href="Index.html" rel="nofollow">Ссылка запрещенная для поисквиков</a>
+                <a href="Index.html" rel="nofollow" class="btn btn-secondary col">Ссылка запрещенная для поисквиков</a>
 
             </li>
 
             <li>
-                <a href="./netLeel.html">На уровень выше текущей</a>
+                <a href="./netLeel.html" class="btn btn-secondary col">На уровень выше текущей</a>
             </li>
             <li>
-                <a href="./next/l.html">На 2 уровня выше</a>
+                <a href="./next/l.html" class="btn btn-secondary col">На 2 уровня выше</a>
             </li>
             <li>
                 <img src="hel.png" usemap="#Navigation" />
@@ -106,14 +106,14 @@
             </li>
 
             <li>
-                <a href="private.html">Относительная в текущем катологе</a>
+                <a href="private.html" class="btn btn-secondary col">Относительная в текущем катологе</a>
             </li>
             <li>
-                <a href="/about/info.html">Относительная about</a>
+                <a href="/about/info.html" class="btn btn-secondary col">Относительная about</a>
             </li>
             <li>
                 <div>
-                    Здесь выможете перейти на <a href="Index.html">главную</a> страницу . Это контекстная ссылка
+                    Здесь выможете перейти на <a href="Index.html" class="btn btn-primary">главную</a> страницу . Это контекстная ссылка
 
                 </div>
             </li>
@@ -134,10 +134,11 @@
         <hr />
     </div>
     <div id="js_con" class="btn btn-primary"></div>
+    
     <script>
         
         let div_ = document.createElement("div");
-        div_.className="blog-post";
+        div_.className ="container";
         div_.textContent = "Область таблицы";
         if (screen.width >= 800) {
             div_.innerHTML = "<table></table><form></form>";
@@ -164,14 +165,17 @@
         if(screen.width>960){
             screen.width=960;
         }
-        table.className = "table table-dark table_st";
+        table.className = "table";
         var df = document.createDocumentFragment();
-
+        var th_ = document.createElement("thead");
+        th_.className = "thead-dark";
+        th_.textContent = "Столбец";
+        table.appendChild(th_);
         for (var i = 0; i < 5; i++) {
             var td = document.createElement("td");
             var tr = document.createElement("tr");
             td.textContent = i;
-            //td.className = (i % 2 == 0) ? "" : "";
+            td.className = (i % 2 == 0) ? "td1" : "td2";
             tr.appendChild(td);
 
             df.appendChild(tr);
@@ -181,7 +185,11 @@
     </script>
     <script>
         var form = document.querySelector("form");
-        form.className = "form_body form_cl";
+        form.width = screen.width;
+        if (screen.width > 960) {
+            screen.width = 960;
+        }
+        form.className = "container";
         form.id = "f_a";
         const cont1 = ['Ваше имя:', 'Ваш email:', 'Ваша дата рождения:'];
         const types_inp1 = ['text', 'email', 'date'];
