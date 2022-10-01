@@ -1,5 +1,13 @@
 <!DOCTYPE html>
+<header id="h_1head" class="HEADERS">
+    <div class="CENT_ HEADERS">
+        <img src="Логотип.png" id="i_logo">
 
+        <div class="HEADERS CENT_" id="header_1">
+            Учебный сайт
+        </div>
+    </div>
+</header>
 <html>
 
 <head>
@@ -8,10 +16,10 @@
     <title>Задание 4</title>
     <link rel="stylesheet" href="style3mobile.css">
     <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 800px)">
-   <!-- <link rel="stylesheet" href="/bootstrap/bootstrap.css">-->
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/bootstrap/bootstrap.css">
-   <!-- <script src="/bootstrap/bootstrap.js"></script>-->
+    <!-- <link rel="stylesheet" href="/bootstrap/bootstrap.css">-->
+    <!--<link rel="stylesheet" href="bootstrap/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <!-- <script src="/bootstrap/bootstrap.js"></script>-->
     <!--<script type="text/javascript" src="Задание3_2"></script>-->
 
     <script>
@@ -29,20 +37,12 @@
     </script>
 
 
-   
-</head>
-<header id="h_1head" class="HEADERS">
-    <div class="CENT_ HEADERS">
-        <img src="Логотип.png" id="i_logo">
 
-        <div class="HEADERS CENT_" id="header_1">
-            Учебный сайт
-        </div>
-    </div>
-</header>
+</head>
+
 
 <body style="margin:0;" class="mbody">
-    <div class="ol_st">
+    <div class="ol_st ">
 
         <a class="ol_st">
             ССылки
@@ -133,8 +133,9 @@
         </noindex>
         <hr />
     </div>
-    <div id="js_con"></div>
+    <div id="js_con" class="btn btn-primary"></div>
     <script>
+        
         let div_ = document.createElement("div");
         div_.className="blog-post";
         div_.textContent = "Область таблицы";
@@ -157,13 +158,13 @@
             d.appendChild(div_);
         </script>-->
     <script>
-
+        //таблица bootstarp
         var table = document.querySelector("table");
         table.width = screen.width;
         if(screen.width>960){
             screen.width=960;
         }
-        table.className = "table_st table";
+        table.className = "table table-dark table_st";
         var df = document.createDocumentFragment();
 
         for (var i = 0; i < 5; i++) {
@@ -309,8 +310,9 @@
         form.appendChild(but_sumbit);
     </script>
 </body>
+
+
+</html>
 <footer class="FOTH">
     © Павлов Дмитрий Павлович 2022
 </footer>
-
-</html>
