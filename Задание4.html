@@ -194,6 +194,7 @@
         const cont1 = ['Ваше имя:', 'Ваш email:', 'Ваша дата рождения:'];
         const types_inp1 = ['text', 'email', 'date'];
         const inp_names = ['fio', 'mail', 'data_'];
+        const control_classes = ['form-control', 'form-control'];
         var hr_ = document.createElement("hr");
         hr_.className = form.className;
         for (var m = 0; m < cont1.length; m++) {
@@ -201,18 +202,19 @@
             dv_.className = form.className;
             var stro_ = document.createElement("strong");
             stro_.textContent = cont1[m];
-            stro_.className = " form-control" + dv_.className+" form_cl";
+            stro_.className = " form-control";// + dv_.className;
             dv_.appendChild(stro_);
             var inp_ = document.createElement("input");
             inp_.type = types_inp1[m];
             inp_.name = inp_names[m];
+            inp_.className = control_classes[i];
             dv_.appendChild(inp_);
             dv_.appendChild(hr_);
             form.appendChild(dv_);
         }
         //Выбор пола
         var divP = document.createElement("div");
-        divP.className = "form_body";
+        divP.className = " form-control";
         var H5 = document.createElement("h5");
         H5.textContent = "Выберите пол";
         H5.className = divP.className;
@@ -227,7 +229,7 @@
         for (var i = 0; i < 2; i++) {
             var radio_b = document.createElement("input");
             radio_b.type = radio_but_type;
-            radio_b.className = "form_body";
+            radio_b.className = "form-check-input";
             radio_b.id = IDs_radio[i];
             radio_b.value = i;
             radio_b.name = "pol";
@@ -237,14 +239,14 @@
             divP2.appendChild(radio_b);
             var lable_rad = document.createElement("label");
             lable_rad.textContent = pols[i];
-            lable_rad.className = radio_b.className;
+            lable_rad.className = "form-check-label";
             divP2.appendChild(lable_rad);
         }
         divP.appendChild(divP2);
         form.appendChild(divP);
         //Количество конечностей
         var div_Con1 = document.createElement("div");
-        div_Con1.className = "form_body";
+        div_Con1.className = "form-control";
         var H52 = document.createElement("h5");
         H52.textContent = "Количество конечностей";
         div_Con1.appendChild(H52);
@@ -271,23 +273,25 @@
         form.appendChild(div_Con1);
         //биография
         var div_BIO = document.createElement("div");
-        div_BIO.className = "form_body";
+        div_BIO.className = "form_body form-control";
         var LAB_BIO = document.createElement("label");
         LAB_BIO.textContent = "Биография";
         LAB_BIO.className = div_BIO.className;
         div_BIO.appendChild(LAB_BIO);
         div_BIO.appendChild(hr_);
         var TEXT_AREA = document.createElement("textarea");
+        TEXT_AREA.className = "form-control";
         div_BIO.appendChild(TEXT_AREA);
         form.appendChild(div_BIO);
         //С контрактом озн
         var div_check = document.createElement("div");
-        div_check.className = "form_body";
+        div_check.className = " form-check form-switch";
         var check_b = document.createElement("input");
         check_b.type = "checkbox";
+        check_b.className = "form-check-input";
         div_check.appendChild(check_b);
         var labl_check = document.createElement("label");
-        labl_check.className = div_check.className;
+        labl_check.className = "form-check-label";
         labl_check.textContent = "С контрактом ознакомлен";
         div_check.appendChild(labl_check);
         form.appendChild(div_check);
@@ -296,6 +300,7 @@
         var SELECT_ = document.createElement("select");
         SELECT_.name = "other[]";
         SELECT_.multiple = "multiple";
+        SELECT_.className = "form-select";
         const sel_vals = ['Бессмертие', 'Прохождение сквозь стены', 'Левитация'];
         for (var i = 0; i < 3; i++) {
             var OPTION_ = document.createElement("option");
