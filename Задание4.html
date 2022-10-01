@@ -7,9 +7,11 @@
     <meta charset="utf-8" />
     <title>Задание 4</title>
     <link rel="stylesheet" href="style3mobile.css">
+    <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 800px)">
+   <!-- <link rel="stylesheet" href="/bootstrap/bootstrap.css">-->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/bootstrap/bootstrap-grid.min.css">
-    <script src="/bootstrap/bootstrap.js"></script>
+   <!-- <script src="/bootstrap/bootstrap.js"></script>-->
     <!--<script type="text/javascript" src="Задание3_2"></script>-->
 
     <script>
@@ -27,7 +29,7 @@
     </script>
 
 
-    <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 800px)">
+   
 </head>
 <header id="h_1head" class="HEADERS">
     <div class="CENT_ HEADERS">
@@ -134,7 +136,7 @@
     <div id="js_con"></div>
     <script>
         let div_ = document.createElement("div");
-
+        div_.className="blog-post";
         div_.textContent = "Область таблицы";
         if (screen.width >= 800) {
             div_.innerHTML = "<table></table><form></form>";
@@ -158,14 +160,17 @@
 
         var table = document.querySelector("table");
         table.width = screen.width;
-        table.className = "table_st";
+        if(screen.width>960){
+            screen.width=960;
+        }
+        table.className = "table_st table";
         var df = document.createDocumentFragment();
 
         for (var i = 0; i < 5; i++) {
             var td = document.createElement("td");
             var tr = document.createElement("tr");
             td.textContent = i;
-            td.className = (i % 2 == 0) ? "td1" : "td2";
+            //td.className = (i % 2 == 0) ? "" : "";
             tr.appendChild(td);
 
             df.appendChild(tr);
@@ -298,7 +303,7 @@
             form.appendChild(hr_);
         var but_sumbit = document.createElement("button");
         but_sumbit.type = "sumbit";
-        but_sumbit.className = "btn btn-outline-primary";
+        but_sumbit.className = "btn btn-primary btn-lg";
         but_sumbit.textContent = "Отправить";
 
         form.appendChild(but_sumbit);
