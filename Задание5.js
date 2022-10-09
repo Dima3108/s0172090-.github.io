@@ -1,8 +1,8 @@
 function check_count(){
     var reader=document.getElementById("count_reader");
     var span_=document.getElementById("span_count");
-    //var res_ = document.getElementById("res_price");
-    //res_.textContent = "";
+    var res_ = document.getElementById("res_price");
+    res_.textContent = "";
     if(reader.value<0){
         span_.textContent="Значение должнобыть >= 0";
         reader.value=0;
@@ -16,8 +16,8 @@ function check_count(){
 function check_price(){
     var reader = document.getElementById("price_reader");
     var span_w = document.getElementById("span_price");
-   // var res_ = document.getElementById("res_price");
-    //res_.textContent = "";
+    var res_ = document.getElementById("res_price");
+    res_.textContent = "";
     if (reader.value <= 0) {
         span_w.textContent = "Значение должнобыть > 0";
         reader.value = 0;

@@ -4,25 +4,58 @@
     <meta charset="utf-8" />
     <title>Задание 5</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
-   
+  <style>
+     #h1_main{
+        align-content: center;
+        text-align: center;
+     }
+     #header_main{
+        background-color: aqua;
+     }
+     .div_content{
+        align-content: center;
+        text-align: center;
+        font-size: x-large;
+        background-color:cyan;
+     }
+     #form_cont{
+        background-color: darkturquoise;
+        align-content: center;
+     }
+     #s_but{
+        align-content: center;
+        text-align: center;
+        
+     }
+     #bod_{
+        background-color:cyan;
+     }
+     #res_price{
+        text-align: center;
+        color: black;
+        font-size: x-large;
+        align-content: center;
+     }
+   </style>
 </head>
-<header >
-    <h1>Калькулятор стоимости</h1>
+ 
+<header id="header_main">
+    <h1 id="h1_main">Калькулятор стоимости</h1>
 </header>
-<body>
-    <form>
-        <div>
-        <label>Количество товара</label>
+<body id="bod_">
+    <form id="form_cont">
+        <div class="div_content">
+        <label>Количество товара:</label>
         <input type="number" id="count_reader">
-        <span id="span_count"></span>
+        <span id="span_count" ></span>
     </div>
-    <div>
-         <label>Цена товара</label>
-        <input type="number" id="price_reader">
+    <div class="div_content">
+         <label>Цена товара:</label>
+        <input type="number" id="price_reader" class="">
         <span id="span_price"></span>
        </div>
-       <button type="button" id="s_but" class="btn btn-primary btn-active">Рачитать</button>
-       <label id="res_price">
+       <button type="button" id="s_but" class="btn btn-primary btn-active ">Рачитать</button>
+       <label id="res_price" class="badge badge-pill badge-succes">
 
        </label>
     </form> 
