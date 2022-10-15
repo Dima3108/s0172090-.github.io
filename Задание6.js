@@ -30,8 +30,8 @@ function check_price() {
 }
 function calculate() {
     var count_ = document.getElementById("count_reader");
-    var price_ = document.getElementById("price_reader");
-    var total = count_.value * price_.value;
+    var price_ = document.getElementById("price_lab");
+    var total = count_.value * parseInt(price_.textContent);
     var res_ = document.getElementById("res_price");
     res_.textContent = "Итоговая стоимость:" + String(total);
     return true;
@@ -58,7 +58,7 @@ let Tovars=[
         IsOption1:false,
         IsOption2:false,
         IsOption3:false,
-        IsOption3:0
+        IsProperty:0
     },
     {
         Category: "c2",
@@ -66,7 +66,7 @@ let Tovars=[
         IsOption1: false,
         IsOption2: false,
         IsOption3: false,
-        IsOption3: 0
+        IsProperty: 0
     },
     {
         Category: "c3",
@@ -74,14 +74,39 @@ let Tovars=[
         IsOption1: false,
         IsOption2: false,
         IsOption3: false,
-        IsOption3: 0
+        IsProperty: 0
     }
 ];
 function SetCategory(){
-
+    var l_price = document.getElementById("price_lab");
+    var div_opt=document.getElementById("Options");
+    var div_prop = document.getElementById("Property");
+    for(var i=1;i<=3;i++)
+    {
+        var opt_=document.getElementById("ope"+i);
+        if(opt_.selected==true)
+        {
+          l_price.textContent="Цена:"+ComputePrice(Tovars[i-1]);
+          if(i==1){
+              div_opt.style.display="block";
+              div_prop.style.display="none";
+          }
+          else{
+            div_opt.style.display="none";
+            if(i==2){
+               div_prop.style.display="block";
+            }
+            else{
+                div_prop.style.display="none";
+            }
+          }
+         // break;
+        }
+    }
 }
 function ComputePrice( model_){
-    var start_price=model_.Price;
+    var start_price=0;
+   start_price+=  model_.Price;
     if(model_.IsOption1==true){
         start_price+=5;
     }
@@ -95,20 +120,67 @@ function ComputePrice( model_){
     return start_price;
 }
 var sel = document.getElementById("sel_po");
+sel.addEventListener("change",SetCategory);
 for(var i=1;i<=3;i++){
     var option_=document.createElement("option");
     option_.id="ope"+i;
     option_.value=i;
     option_.textContent=Tovars[i-1].Category;
-    if(i==1){
-        option_.selected=true;
-    }
     option_.addEventListener("change",SetCategory)
+    if(i==1){
+        option_.select="selected";
+    }
+    
     sel.appendChild(option_);
 }
 
-
-
+var div_opt = document.getElementById("Options");
+div_opt.display="none";
+var sel_=document.createElement("div");
+//sel_.style.display="none";
+for(var i=1;i<=3;i++){
+    var options=document.createElement("input");
+    options.type="radio";
+    options.id="_Isoption"+i;
+   // options.textContent="Опция"+i;
+   var l_opt=document.createElement("label");
+    l_opt.textContent = "Опция" + i;
+    options.value=i;
+    sel_.appendChild(l_opt);
+    sel_.appendChild(options);
+}
+function ChecedProp(){
+for(var i=1;i<=3;i++){
+    var opt_=document.getElementById("ope"+i);
+    if(opt_.selected==true){
+        let sum=0;
+        for(var l=1;l<=4;l++){
+            var ch_=document.getElementById("pr"+l);
+            if (ch_.checked==true){
+                sum+=4*i;
+            }
+        }
+        Tovars[i-1].IsProperty=sum;
+       
+    }
+} 
+SetCategory();
+}
+div_opt.appendChild(sel_);
+var prop_div = document.getElementById("Property");
+prop_div.style.display="none";
+for(var i=1;i<=4;i++){
+    var check_prop=document.createElement("input");
+    check_prop.id="pr"+i;
+    check_prop.type ="checkbox";
+    check_prop.value=i;
+    //check_prop.textContent="Свойство"+i;
+    var l_ch=document.createElement("label");
+    l_ch.textContent = "Свойство" + i;;
+    check_prop.addEventListener("click",ChecedProp);
+    prop_div.appendChild(l_ch);
+    prop_div.appendChild(check_prop);
+}
 
 
 
