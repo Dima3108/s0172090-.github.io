@@ -86,7 +86,7 @@ function SetCategory(){
         var opt_=document.getElementById("ope"+i);
         if(opt_.selected==true)
         {
-          l_price.textContent="Цена:"+ComputePrice(Tovars[i-1]);
+          l_price.textContent=ComputePrice(Tovars[i-1]);
           if(i==1){
               div_opt.style.display="block";
               div_prop.style.display="none";
@@ -133,7 +133,26 @@ for(var i=1;i<=3;i++){
     
     sel.appendChild(option_);
 }
+function ChecedOption(){
+    let p=0;
+    for(var i=1;i<=3;i++){
+        var sel = document.getElementById("ope" + i);
+        if(sel.selected==true){
+            p=i-1;
 
+        }
+    }
+    for(var i=1;i<=3;i++){
+      var r_but=document.getElementById("_Isoption"+i);
+      if(r_but.checked==true){
+        Tovars[p]["IsOption"+i]=true;
+      }
+      else{
+          Tovars[p]["IsOption" + i] = false;
+      }
+    }
+    SetCategory();
+}
 var div_opt = document.getElementById("Options");
 div_opt.display="none";
 var sel_=document.createElement("div");
@@ -142,6 +161,11 @@ for(var i=1;i<=3;i++){
     var options=document.createElement("input");
     options.type="radio";
     options.id="_Isoption"+i;
+    options.addEventListener("click",ChecedOption);
+    options.name="opt";
+    if(i==1){
+        options.checked=true;
+    }
    // options.textContent="Опция"+i;
    var l_opt=document.createElement("label");
     l_opt.textContent = "Опция" + i;
@@ -181,7 +205,7 @@ for(var i=1;i<=4;i++){
     prop_div.appendChild(l_ch);
     prop_div.appendChild(check_prop);
 }
-
+window.addEventListener("DOMContentLoaded",SetCategory);
 
 
 
