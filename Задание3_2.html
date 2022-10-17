@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <title>Задание 3</title>
     <link rel="stylesheet" href="style3mobile.css">
-    <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 800px)">
+    <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 1024px)">
     <!--<script type="text/javascript" src="Задание3_2"></script>-->
 
   <script>
@@ -15,7 +15,7 @@
       let div_ = document.createElement("div");
     div_.textContent = "Область таблицы";
     const sim = '"';
-    div_.innerHTML = "<table></table>";
+    //div_.innerHTML = "<table></table>";
       var d=document.getElementById("js_con");
        d.appendChild(div_);
            
@@ -25,7 +25,7 @@
 </script>
 
 
-    <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 800px)">
+    <link rel="stylesheet" href="style3.css" type="text/css" media="screen and (min-width: 1024px)">
 </head>
 <header id="h_1head" class="HEADERS">
     <div class="CENT_ HEADERS">
@@ -155,7 +155,7 @@
                }
                 var d = document.getElementById("js_con");
                 d.appendChild(div_);*/
-                if(screen.width<800){
+                if(screen.width<1024){
                     document.write("<form></form><table></table>");
                 }
                 else{
