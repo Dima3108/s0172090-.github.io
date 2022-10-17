@@ -27,7 +27,7 @@
             let div_ = document.createElement("div");
             div_.textContent = "Область таблицы";
             const sim = '"';
-            div_.innerHTML = "<table></table>";
+          //  div_.innerHTML = "<table></table>";
             var d = document.getElementById("js_con");
             d.appendChild(div_);
 
@@ -42,21 +42,21 @@
 
 
 <body style="margin:0;" class="mbody container">
-    <div class=" row">
+    <div class="ol_st row ">
 
-        <a class=" col btn btn-light">
+        <a class="ol_st col btn btn-light " id="a$1">
             ССылки
         </a>
 
-        <a class=" col btn btn-light">Таблица</a>
-        <a class=" col btn btn-light">
+        <a class="ol_st col btn btn-dark " id="a$2">Таблица</a>
+        <a class="ol_st col btn btn-light " id="a$3">
             Форма
         </a>
     </div>
     <div class="main_con">
         <ol id="o_a row">
             <li >
-                <a href="http://example.com" class="btn btn-secondary col">Example1</a>
+                <a href="http://example.com" class="btn btn-secondary col-3">Example1</a>
             </li>
             <li>
                 <a href="https://example.com" class="btn btn-secondary col">Example2</a>
