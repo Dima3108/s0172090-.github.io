@@ -40,11 +40,24 @@
 <body style="margin:0;" class="mbody" >
         <div class="ol_st">
             
-            <a  class="ol_st">
+            <a  class="ol_st" id="a$1">
                 ССылки
             </a>
-                   
-            <a  class="ol_st">Таблица</a>
+               <script>
+                if(screen.width<800){
+                   /* var h_=document.createElement("hr");
+                    h_.id="h$1";
+                    document.getElementById("a$1").appendChild(h_);*/
+                }
+               </script>    
+            <a  class="ol_st" id="a$2">Таблица</a>
+            <script>
+                if (screen.width < 800) {
+                      /*  var h_ = document.createElement("hr");
+                        h_.id = "h$2";
+                        document.getElementById("a$2").appendChild(h_);*/
+                    }
+            </script>
             <a  class="ol_st">
                 Форма
             </a>
@@ -129,9 +142,9 @@
             </noindex>
             <hr />
         </div>
-        <div id="js_con" ></div>
-        <script >
-             let div_ = document.createElement("div");
+        <div id="js_con" >
+         <script >
+             /*let div_ = document.createElement("div");
             
                 div_.textContent = "Область таблицы";
                if(screen.width>=800){
@@ -141,8 +154,16 @@
                 div_.innerHTML = "<form></form><table></table>";
                }
                 var d = document.getElementById("js_con");
-                d.appendChild(div_);
-        </script>
+                d.appendChild(div_);*/
+                if(screen.width<800){
+                    document.write("<form></form><table></table>");
+                }
+                else{
+                    document.write("<table></table><form></form>");
+                }
+        </script>     
+        </div>
+      
      <!--   <script media="screen and (max-width: 800px)">
             let div_ = document.createElement("div");
 
