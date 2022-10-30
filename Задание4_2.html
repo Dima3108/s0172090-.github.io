@@ -7,8 +7,8 @@
     <meta charset="utf-8" />
     <title>Задание 4</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-    <script src="/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+ 
 </head>
 <header id="h_1head" class="HEADERS">
     <img src="Логотип.png" id="i_logo">
@@ -19,51 +19,58 @@
 </header>
 
 <body style="margin:0;" class="mbody">
+<div class="container">
 
-    <ol class="ol_st">
-        <li class="ol_st">
-            <a href="#o_a">
+<div class="row">
+   <!-- <ol class="">
+        <li class="ol_st col-sm">-->
+            <div class="ol_st col-sm-3">
+            <a href="#o_a" >
                 ССылки
 
             </a>
-
-        </li>
-        <li class="ol_st">
-            <a href="#t_sw">Таблица</a>
-        </li>
-        <li class="ol_st">
-            <a href="#f_a">Форма
-            </a>
-        </li>
-    </ol>
+            </div>
+       <!-- </li>
+        <li class="ol_st col-sm">-->
+        <div class="ol_st col-sm-3"> 
+            <a href="#t_sw" >Таблица</a></div>
+     <!--   </li>
+        <li class="ol_st col-sm">-->
+            <div class="ol_st col-sm-3">
+            <a href="#f_a" >Форма</a>
+            </div>
+       <!-- </li>
+    </ol>-->
+</div>
+   </div> 
     <hr class="ol_st" />
-    <ol id="o_a">
+    <ol id="o_a btn btn-success">
         <li>
-            <a href="http://example.com">Example1</a>
+            <a class="btn btn-info" href="http://example.com">Example1</a>
         </li>
         <li>
-            <a href="https://example.com">Example2</a>
+            <a class="btn btn-info" href="https://example.com">Example2</a>
         </li>
         <li>
-            <a href="ftp://uor_file.txt">Файл без пороля</a>
+            <a class="btn btn-info" href="ftp://uor_file.txt">Файл без пороля</a>
         </li>
         <li>
-            <a href="ftp://usewr@password/privatedata.txt">Файл с авторизацией</a>
+            <a class="btn btn-info" href="ftp://usewr@password/privatedata.txt">Файл с авторизацией</a>
         </li>
         <li>
-            <a href="https://example.com/page_h1">Фрагмент сайта</a>
+            <a class="btn btn-info" href="https://example.com/page_h1">Фрагмент сайта</a>
         </li>
         <li>
-            <a href="Index.html">HOME</a>
+            <a class="btn btn-info" href="Index.html">HOME</a>
         </li>
         <li>
-            <a href="Index.html?fio=user&mail=5@f">Ссылка с 2 параметрами</a>
+            <a class="btn btn-info" href="Index.html?fio=user&mail=5@f">Ссылка с 2 параметрами</a>
         </li>
         <li>
-            <a>Без href</a>
+            <a class="btn btn-info">Без href</a>
         </li>
         <li>
-            <a href="">Пустой href</a>
+            <a class="btn btn-info" href="">Пустой href</a>
         </li>
         <li>
 
@@ -140,7 +147,7 @@
         </tbody>
     </table>
     <hr />
-    <form id="f_a" class="form_body">
+    <form id="f_a" class="form_body ">
         <div class="form_body">
 
 
@@ -199,13 +206,13 @@
             <hr class="form_body">
         </div>
         <div class="form_body">
-            <label class="form_body">Биография:</label>
-            <hr class="form_body">
-            <textarea></textarea>
+            <label class="form_body form-control">Биография:</label>
+           <!-- <hr class="form_body">-->
+            <textarea class="form-control"></textarea>
 
         </div>
         <div class="form_body">
-            <input type="checkbox" class="form_body">
+            <input type="checkbox" class="form_body btn btn-success">
             <label class="form_body">С контрактом ознакомлен</label>
         </div>
         <hr />
@@ -216,7 +223,7 @@
         </select>
         <hr />
         <hr />
-        <button type="submit" style="background-color:royalblue ;" class="form_body but-sumbit_res">Отправить</button>
+        <button type="submit"  class=" btn btn-success">Отправить</button>
     </form>
 </body>
 <footer class="FOTH">
