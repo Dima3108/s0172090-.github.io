@@ -42,7 +42,8 @@ count_r.addEventListener("change", check_count, false);
 //price_r.addEventListener("change", check_price, false);
 var sum_button = document.getElementById("s_but");
 sum_button.addEventListener("click", calculate, false);
-
+var s = document.getElementById("count_reader");
+s.addEventListener("change", calculate);
 var Model={
     "Category":"value",
     "Price":12,
@@ -168,10 +169,11 @@ for(var i=1;i<=3;i++){
     }
    // options.textContent="Опция"+i;
    var l_opt=document.createElement("label");
-    l_opt.textContent = "Опция" + i;
-    options.value=i;
+    l_opt.textContent = "Доп Опция" + i;
+    options.value = i;
+    l_opt.appendChild(options);
     sel_.appendChild(l_opt);
-    sel_.appendChild(options);
+    //sel_.appendChild(options);
 }
 function ChecedProp(){
 for(var i=1;i<=3;i++){
@@ -200,13 +202,12 @@ for(var i=1;i<=4;i++){
     check_prop.value=i;
     //check_prop.textContent="Свойство"+i;
     var l_ch=document.createElement("label");
-    l_ch.textContent = "Свойство" + i;;
+    l_ch.textContent = "Доп Свойство" + i;;
     check_prop.addEventListener("click",ChecedProp);
     prop_div.appendChild(l_ch);
     prop_div.appendChild(check_prop);
 }
-window.addEventListener("DOMContentLoaded",SetCategory);
-
+window.addEventListener("DOMContentLoaded", SetCategory);
 
 
 
