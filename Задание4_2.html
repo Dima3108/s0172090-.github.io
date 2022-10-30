@@ -10,41 +10,41 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
  
 </head>
+
 <header id="h_1head" class="HEADERS">
-    <img src="Логотип.png" id="i_logo">
+    <img src="Логотип.png" id="i_logo" >
 
     <div class="HEADERS" id="header_1">
         Учебный сайт
     </div>
+
 </header>
 
 <body style="margin:0;" class="mbody">
 <div class="container">
 
 <div class="row">
-   <!-- <ol class="">
-        <li class="ol_st col-sm">-->
+  
+       
             <div class="ol_st col-sm-3">
             <a href="#o_a" >
                 ССылки
 
             </a>
             </div>
-       <!-- </li>
-        <li class="ol_st col-sm">-->
+      
         <div class="ol_st col-sm-3"> 
             <a href="#t_sw" >Таблица</a></div>
-     <!--   </li>
-        <li class="ol_st col-sm">-->
+   
             <div class="ol_st col-sm-3">
             <a href="#f_a" >Форма</a>
             </div>
-       <!-- </li>
-    </ol>-->
+      
 </div>
    </div> 
     <hr class="ol_st" />
-    <ol id="o_a btn btn-success">
+    
+    <ol id="o_a">
         <li>
             <a class="btn btn-info" href="http://example.com">Example1</a>
         </li>
@@ -122,7 +122,9 @@
 
     </noindex>
     <hr />
-    <table class="table_st" id="t_sw">
+    <div>
+        
+    <table  id="t_sw">
         <tbody class="table_st">
             <tr>
                 <th class="main_th">Колонка 1</th>
@@ -147,7 +149,7 @@
         </tbody>
     </table>
     <hr />
-    <form id="f_a" class="form_body ">
+    <form id="f_a" >
         <div class="form_body">
 
 
@@ -225,6 +227,20 @@
         <hr />
         <button type="submit"  class=" btn btn-success">Отправить</button>
     </form>
+
+</div>
+<script>
+            var tab=document.getElementById("t_sw");
+            var form_=document.getElementById("f_a");
+            if(screen.width<1024){
+                tab.className="table_st order-1";
+                form_.className="form_body order-2";
+            }
+            else{
+                tab.className = "table_st order-2";
+                 form_.className = "form_body order-1";
+            }
+        </script>
 </body>
 <footer class="FOTH">
     © Павлов Дмитрий Павлович 2022
