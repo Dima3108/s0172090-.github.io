@@ -8,7 +8,29 @@
     <title>Задание 4</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
- 
+    <style>
+        #fld{
+           
+        }
+        #d_t{
+            order: 1;
+          
+        }
+        #d_f{
+            order: 2;
+         
+        }
+    </style>
+    <style media="screen and (min-width: 1024px)">
+       #d_t{
+        order: 2;
+       
+       }
+       #d_f{
+        order: 1;
+      
+       }
+    </style>
 </head>
 
 <header id="h_1head" class="HEADERS">
@@ -122,8 +144,8 @@
 
     </noindex>
     <hr />
-    <div>
-        
+    <div style="display:flex ;" id="fld" >
+        <div id="d_t" >
     <table  id="t_sw">
         <tbody class="table_st">
             <tr>
@@ -147,8 +169,11 @@
                 <td colspan="3" class="td1">5</td>
             </tr>
         </tbody>
-    </table>
-    <hr />
+    </table> <hr />
+    </div>
+   
+    <div id="d_f"  >
+        <hr />
     <form id="f_a" >
         <div class="form_body">
 
@@ -227,20 +252,9 @@
         <hr />
         <button type="submit"  class=" btn btn-success">Отправить</button>
     </form>
-
 </div>
-<script>
-            var tab=document.getElementById("t_sw");
-            var form_=document.getElementById("f_a");
-            if(screen.width<1024){
-                tab.className="table_st order-1";
-                form_.className="form_body order-2";
-            }
-            else{
-                tab.className = "table_st order-2";
-                 form_.className = "form_body order-1";
-            }
-        </script>
+</div>
+
 </body>
 <footer class="FOTH">
     © Павлов Дмитрий Павлович 2022
