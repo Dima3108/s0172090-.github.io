@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <link rel="stylsheet" href="/bootstrap/bootstrap.min.css">
+        <link rel="stylsheet" href="/bootstrap/bootstrap.min.css">  
+         <h1>Задание 7</h1>
     </header>
-    <body>
-        <div>
-            <img src="Pred.png">
-            <img src="Next.png">
+    <body style="align-content:center ;">
+        <head>
+            <title>Задание 7</title>
+         
+        </head>
+        <label id="ol_i">0</label>
+        <div >
+           <!-- <img src="Pred.png" id="pr_i">-->
+            <div id="floadi">
+
+            </div>
+            <div id="fpr">
+
+            </div>
+           <!-- <img src="Next.png" id="ne_i">-->
         </div>
+         <input type="hidden" id="cesh_count" value="0">
        <script >
+        const min_pos=0;
+        const max_pos=4;
+        var c_p=document.getElementById("cesh_count");
+        if(screen.width<1024){
+            c_p.value="2";
+        }
+        else{
+            c_p.value="4";
+        }
+        var _fl=document.getElementById("floadi");
+        var _fpr=document.getElementById("fpr");
+        var pr__=document.createElement("img");
+        pr__.id="pr_i";
+        pr__.src="Pred.png";
+        _fl.appendChild(pr__);
+        for(var i=0;i<Number((document.getElementById("cesh_count").value));i++){
+            var im_=document.createElement("img");
+            im_.id="imgl"+i;
+            im_.width=100;
+            im_.height=pr__.height;
+            _fl.appendChild(im_);
+            var rb=document.createElement("input");
+            rb.id="r"+i;
+            rb.type="radio";
+            if(i==Number((document.getElementById("ol_i").textContent))){
+                rb.checked="checked";
+            }
+            rb.name="r";
+            _fpr.appendChild(rb);
+        }
+        var nx__=document.createElement("img");
+        nx__.id="ne_i";
+        nx__.src="Next.png";
+        _fl.appendChild(nx__);
+        function SetP(pos){
+var r=document.getElementById("r"+Number(pos));
+r.checked="checked";
+        }
+        function NextCL(){
+             var ol=document.getElementById("ol_i");
+             let c=Number(ol.textContent);
+             c++;
+             if(c>=max_pos){
+                c=0;
+             }
+             SetP(c);
+             ol.textContent=c;
+
+        }
+         function PredCL() {
+                var ol = document.getElementById("ol_i");
+                let c = Number(ol.textContent);
+                c--;
+                if(c<min_pos){
+                    c=max_pos;
+                }
+                SetP(c);
+                ol.textContent = c;
+            }
+           let c=0;
+           var pr=document.getElementById("pr_i");
+          
+           pr.addEventListener("click",PredCL);
+           var ne=document.getElementById("ne_i");
+           ne.addEventListener("click",NextCL);
            
        </script>
+       
+      
     </body>
 </html>
