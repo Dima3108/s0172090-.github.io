@@ -4,7 +4,7 @@
         <link rel="stylsheet" href="/bootstrap/bootstrap.min.css">  
          <h1>Задание 7</h1>
     </header>
-    <body style="align-content:center ;">
+    <body style="align-content:center ;text-align: center;">
         <head>
             <title>Задание 7</title>
          
@@ -23,7 +23,7 @@
          <input type="hidden" id="cesh_count" value="0">
        <script >
         const min_pos=0;
-        const max_pos=4;
+        const max_pos=12;
         var c_p=document.getElementById("cesh_count");
         if(screen.width<1024){
             c_p.value="2";
@@ -36,16 +36,18 @@
         var pr__=document.createElement("img");
         pr__.id="pr_i";
         pr__.src="Pred.png";
+        pr__.height=230;
         _fl.appendChild(pr__);
         for(var i=0;i<Number((document.getElementById("cesh_count").value));i++){
             var im_=document.createElement("img");
             im_.id="imgl"+i;
-            im_.width=100;
+            im_.width=230;
             im_.height=pr__.height;
             _fl.appendChild(im_);
             var rb=document.createElement("input");
             rb.id="r"+i;
             rb.type="radio";
+           
             if(i==Number((document.getElementById("ol_i").textContent))){
                 rb.checked="checked";
             }
@@ -55,39 +57,54 @@
         var nx__=document.createElement("img");
         nx__.id="ne_i";
         nx__.src="Next.png";
+        nx__.height=pr__.height;
         _fl.appendChild(nx__);
+
         function SetP(pos){
-var r=document.getElementById("r"+Number(pos));
-r.checked="checked";
+                   var r=document.getElementById("r"+String(Number(pos)%Number(document.getElementById("cesh_count").value)));
+                   r.checked = "checked";
+        }
+        function BuildImg(){
+            var pos=Number(document.getElementById("ol_i").textContent);
+            for(var i=0;i<Number(document.getElementById("cesh_count").value);i++){
+                 var im=document.getElementById("imgl"+i);
+                 im.src="images7/img"+(pos+i)+".jpg";
+            }
         }
         function NextCL(){
              var ol=document.getElementById("ol_i");
              let c=Number(ol.textContent);
+              var count_ = Number(document.getElementById("cesh_count").value);
              c++;
-             if(c>=max_pos){
+             if(c>=max_pos-count_){
                 c=0;
              }
+              ol.textContent=c;
              SetP(c);
-             ol.textContent=c;
-
+            
+BuildImg();
         }
          function PredCL() {
                 var ol = document.getElementById("ol_i");
-                let c = Number(ol.textContent);
+                var count_=Number(document.getElementById("cesh_count").value);
+                var c = Number(ol.textContent);
                 c--;
-                if(c<min_pos){
-                    c=max_pos;
-                }
+                if(c<0){
+                    c=max_pos-count_;
+                } 
+                 ol.textContent = c;
                 SetP(c);
-                ol.textContent = c;
+              
+               BuildImg();
             }
-           let c=0;
+         //  let c=0;
            var pr=document.getElementById("pr_i");
           
            pr.addEventListener("click",PredCL);
            var ne=document.getElementById("ne_i");
            ne.addEventListener("click",NextCL);
-           
+           BuildImg();
+
        </script>
        
       
