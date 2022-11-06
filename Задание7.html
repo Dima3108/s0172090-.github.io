@@ -9,7 +9,7 @@
             <title>Задание 7</title>
          
         </head>
-        <label id="ol_i">0</label>
+        <input type="hidden" id="ol_i" value="0">
         <div >
            <!-- <img src="Pred.png" id="pr_i">-->
             <div id="floadi">
@@ -65,7 +65,7 @@
                    r.checked = "checked";
         }
         function BuildImg(){
-            var pos=Number(document.getElementById("ol_i").textContent);
+            var pos=Number(document.getElementById("ol_i").value);
             for(var i=0;i<Number(document.getElementById("cesh_count").value);i++){
                  var im=document.getElementById("imgl"+i);
                  im.src="images7/img"+(pos+i)+".jpg";
@@ -73,13 +73,13 @@
         }
         function NextCL(){
              var ol=document.getElementById("ol_i");
-             let c=Number(ol.textContent);
+             let c=Number(ol.value);
               var count_ = Number(document.getElementById("cesh_count").value);
              c++;
              if(c>=max_pos-count_){
                 c=0;
              }
-              ol.textContent=c;
+              ol.value=c;
              SetP(c);
             
 BuildImg();
@@ -87,12 +87,12 @@ BuildImg();
          function PredCL() {
                 var ol = document.getElementById("ol_i");
                 var count_=Number(document.getElementById("cesh_count").value);
-                var c = Number(ol.textContent);
+                var c = Number(ol.value);
                 c--;
                 if(c<0){
                     c=max_pos-count_;
                 } 
-                 ol.textContent = c;
+                 ol.value = c;
                 SetP(c);
               
                BuildImg();
