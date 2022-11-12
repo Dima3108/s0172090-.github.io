@@ -78,8 +78,7 @@ localStorage.setItem("user_comment",value);
     </script>
     </body>
     <script>
-        var bod=document.getElementById("mbod");
-        bod.addEventListener("load",function(){
+      
                    if(localStorage.getItem("user_name")!=null){
                     var us_n=document.getElementById("us_name");
                     us_n.value=localStorage.getItem("user_name");
@@ -92,6 +91,6 @@ localStorage.setItem("user_comment",value);
                     var us_c=document.getElementById("us_comment");
                     us_c.value=localStorage.getItem("user_comment");
                    }
-        });
+    
     </script>
 </html>
