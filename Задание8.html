@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link href="/bootstrap/bootstrap.css">
+       <link rel="stylheet" href="bootstrap/bootstrap.css">
+       <link rel="stylheet" href="bootstrap/bootstrap.min.css">
     </head> 
     <style>
             #contact_form{
@@ -17,6 +18,14 @@
                 align-content: center;
             }
         </style>
+        <style media="screen and (max-width: 1024px)">
+                        #contact_form{
+                            width: device-width;
+                        }
+                         #mbod{
+                            width: device-width;
+                         }
+            </style>
     <body id="mbod">
 
         <footer>
@@ -29,7 +38,7 @@
                 });
             </script>
         </footer>
-        <div id="contact_form">
+        <div id="contact_form" class="container">
         <div style="text-align:right;"> 
                <button type="button" id="close_but" >Закрыть</button>
         </div>
@@ -52,7 +61,9 @@
             <label>С политикой обработки персональных данных согласен</label>
            <input type="checkbox" id="us_policy"> 
         </div>
-        
+        <div>
+            <button type="button" class="btn btn-primary" >Отправить</button>
+        </div>
     </div>
     <script>
         var d=document.getElementById("close_but");
