@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link href="/bootstrap/bootstrap.css">
+    </head> 
+    <style>
+            #contact_form{
+                display:none;
+            
+                width: 960px;
+              
+                background-color:lightslategrey;
+            }
+            #mbod{
+                background-color: aquamarine;
+                text-align: center;
+                align-content: center;
+            }
+        </style>
+    <body id="mbod">
+
+        <footer>
+            <button id="but_obs" class="btn btn-info" type="button">Форма обратной связи</button>
+            <script>
+                var b=document.getElementById("but_obs");
+                b.addEventListener("click",function(){
+                       var q=document.getElementById("contact_form");
+                       q.style="display:block";
+                });
+            </script>
+        </footer>
+        <div id="contact_form">
+        <div style="text-align:right;"> 
+               <button type="button" id="close_but" >Закрыть</button>
+        </div>
+       
+        <div>
+            <label >Ваше имя:</label>
+            <input type="text" id="us_name">
+        </div> 
+        <div>
+            <label>Ваша почта:</label>
+            <input type="email" id="us_email">
+        </div>
+        <div>
+            <label>Ваш комментарий</label>
+            <textarea id="us_comment">
+
+            </textarea>
+        </div>
+        <div>
+            <label>С политикой обработки персональных данных согласен</label>
+           <input type="checkbox" id="us_policy"> 
+        </div>
+        
+    </div>
+    <script>
+        var d=document.getElementById("close_but");
+        d.addEventListener("click",function(){
+            var q = document.getElementById("contact_form");
+            q.style = "display:none";
+        });
+        var us_n=document.getElementById("us_name");
+        us_n.addEventListener("change",function(){
+               var value=String(document.getElementById("us_name").value);
+               localStorage.setItem("user_name",value);
+        });
+        var us_e=document.getElementById("us_email");
+        us_e.addEventListener("change",function(){
+                var value=String(document.getElementById("us_email").value);
+                localStorage.setItem("user_mail",value);
+        });
+        var us_c=document.getElementById("us_comment");
+        us_c.addEventListener("change",function(){
+var value=String(document.getElementById("us_comment").value);
+localStorage.setItem("user_comment",value);
+        });
+    </script>
+    </body>
+    <script>
+        var bod=document.getElementById("mbod");
+        bod.addEventListener("load",function(){
+                   if(localStorage.getItem("user_name")!=null){
+                    var us_n=document.getElementById("us_name");
+                    us_n.value=localStorage.getItem("user_name");
+                   }
+                   if(localStorage.getItem("user_mail")!=null){
+                    var us_e=document.getElementById("us_email");
+                    us_e.value=localStorage.getItem("user_mail");
+                   }
+                   if(localStorage.getItem("user_comment")!=null){
+                    var us_c=document.getElementById("us_comment");
+                    us_c.value=localStorage.getItem("user_comment");
+                   }
+        });
+    </script>
+</html>
