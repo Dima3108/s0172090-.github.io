@@ -84,6 +84,46 @@ rb.addEventListener("click",function(){
 CLOSE_FORM();
     var rf = document.getElementById("result_div");
     rf.style="display:block";
-    var f = document.getElementById("out_message");
+    const site_ ="https://localhost:5001/User/AddUser/?";
+    const apf='"';
+let uri_=site_;
+    var u_name=document.getElementById("us_name");
+uri_+="us_name="+apf+String(u_name.value)+apf+"&";
+var u_mail=document.getElementById("us_email");
+uri_+="us_email="+apf+String(u_mail.value)+apf+"&";
+var u_comm=document.getElementById("us_comment");
+uri_+="us_comment="+apf+String(u_comm.value)+apf+"&";
+    var u_p = document.getElementById("us_policy");
+    uri_ +="us_policy="+String(u_p.checked);
+ 
+
+    try {
+        var xhr = new XMLHttpRequest();
+   
+        xhr.open('GET',uri_,true);
+    // xhr.onreadystatechange = someHandler;
+         xhr.send();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState!=4)return;
+            var w = document.getElementById("out_message");
+            if(xhr.status!=200)
+            {
+                w.textContent = "Неудалось отправить , повторите попытку.";
+            }
+            else{
+                w.textContent=xhr.responseText;
+                if (w.textContent =="Ваше обращение принято."){
+                    localStorage.removeItem("user_name");
+                    localStorage.removeItem("user_mail");
+                    localStorage.removeItem("user_comment");
+                }
+            }
+        }
+       // f.textContent=xhr.responseText;
+       
+    } catch (error) {
+       let f = document.getElementById("out_message");
     f.textContent="Неудалось отправить , повторите попытку.";
+    }
+    
 });
