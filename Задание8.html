@@ -30,13 +30,7 @@
 
         <footer>
             <button id="but_obs" class="btn btn-info" type="button">Форма обратной связи</button>
-            <script>
-                var b=document.getElementById("but_obs");
-                b.addEventListener("click",function(){
-                       var q=document.getElementById("contact_form");
-                       q.style="display:block";
-                });
-            </script>
+           
         </footer>
         <div id="contact_form" class="container">
         <div style="text-align:right;"> 
@@ -62,46 +56,13 @@
            <input type="checkbox" id="us_policy"> 
         </div>
         <div>
-            <button type="button" class="btn btn-primary" >Отправить</button>
+            <button type="button" class="btn btn-primary" id="b_sumb">Отправить</button>
         </div>
     </div>
-    <script>
-        var d=document.getElementById("close_but");
-        d.addEventListener("click",function(){
-            var q = document.getElementById("contact_form");
-            q.style = "display:none";
-        });
-        var us_n=document.getElementById("us_name");
-        us_n.addEventListener("change",function(){
-               var value=String(document.getElementById("us_name").value);
-               localStorage.setItem("user_name",value);
-        });
-        var us_e=document.getElementById("us_email");
-        us_e.addEventListener("change",function(){
-                var value=String(document.getElementById("us_email").value);
-                localStorage.setItem("user_mail",value);
-        });
-        var us_c=document.getElementById("us_comment");
-        us_c.addEventListener("change",function(){
-var value=String(document.getElementById("us_comment").value);
-localStorage.setItem("user_comment",value);
-        });
-    </script>
+<div style="display:none ;" id="result_div">
+         <label class="btn btn-info" id="out_message"></label>
+</div>
     </body>
-    <script>
-      
-                   if(localStorage.getItem("user_name")!=null){
-                    var us_n=document.getElementById("us_name");
-                    us_n.value=localStorage.getItem("user_name");
-                   }
-                   if(localStorage.getItem("user_mail")!=null){
-                    var us_e=document.getElementById("us_email");
-                    us_e.value=localStorage.getItem("user_mail");
-                   }
-                   if(localStorage.getItem("user_comment")!=null){
-                    var us_c=document.getElementById("us_comment");
-                    us_c.value=localStorage.getItem("user_comment");
-                   }
-    
-    </script>
+ 
+    <script src="Задание8.js"></script>
 </html>
