@@ -1,3 +1,11 @@
+function CLEAR_FORM(){
+    var u_name = document.getElementById("us_name");
+    u_name.value="";
+    var us_e = document.getElementById("us_email");
+    us_e.value="";
+    var u_comm = document.getElementById("us_comment");
+    u_comm.value="";
+}
 function CLOSE_RESULT(){
     var r = document.getElementById("result_div");
     r.style="display:none";
@@ -79,29 +87,29 @@ else {
      var t = document.getElementById("but_obs");
      t.style = "display:block";*/
 }
-var rb = document.getElementById("b_sumb");
+/*var rb = document.getElementById("b_sumb");
 rb.addEventListener("click",function(){
-CLOSE_FORM();
+//CLOSE_FORM();
     var rf = document.getElementById("result_div");
     rf.style="display:block";
     const site_ ="https://localhost:5001/User/AddUser/?";
     const apf='"';
 let uri_=site_;
-    var u_name=document.getElementById("us_name");
+ /*   var u_name=document.getElementById("us_name");
 uri_+="us_name="+apf+String(u_name.value)+apf+"&";
 var u_mail=document.getElementById("us_email");
 uri_+="us_email="+apf+String(u_mail.value)+apf+"&";
 var u_comm=document.getElementById("us_comment");
 uri_+="us_comment="+apf+String(u_comm.value)+apf+"&";
     var u_p = document.getElementById("us_policy");
-    uri_ +="us_policy="+String(u_p.checked);
+    uri_ +="us_policy="+String(u_p.checked);*/
  
 
-    try {
-        var xhr = new XMLHttpRequest();
+   // try {
+       /* var xhr = new XMLHttpRequest();
    
         xhr.open('GET',uri_,true);
-    // xhr.onreadystatechange = someHandler;
+ 
          xhr.send();
         xhr.onreadystatechange=function(){
             if(xhr.readyState!=4)return;
@@ -118,12 +126,12 @@ uri_+="us_comment="+apf+String(u_comm.value)+apf+"&";
                     localStorage.removeItem("user_comment");
                 }
             }
-        }
-       // f.textContent=xhr.responseText;
-       
-    } catch (error) {
-       let f = document.getElementById("out_message");
-    f.textContent="Неудалось отправить , повторите попытку.";
-    }
-    
-});
+        }*/
+        
+  //  CLOSE_FORM();
+   // } catch (error) {
+     //  let f = document.getElementById("out_message");
+   // f.textContent="Неудалось отправить , повторите попытку.";
+   // }
+   // return false;
+//});
