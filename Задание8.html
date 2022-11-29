@@ -27,87 +27,91 @@
                             width: device-width;
                          }
             </style>
-    <body id="mbod">
+        <body id="mbod">
 
-        <footer>
-            <button id="but_obs" class="btn btn-info" type="button">Форма обратной связи</button>
-           
-        </footer>
-          <div style="text-align:right;"> 
-               <button type="button" id="close_but" >Закрыть</button>
-                </div>
-        <form id="contact_form"  accept-charset="UTF-8">
-             
-       
-      <!--  <div>-->
-            <label >Ваше имя:</label>
-            <input type="text" id="us_name" name="name">
-            
-      <!--  </div> 
-        <div>-->
-            <label>Ваша почта:</label>
-            <input type="email" id="us_email" name="email">
-           
-       <!-- </div>
-        <div>-->
-            <label>Ваш комментарий</label>
-            <textarea id="us_comment" name="comment">
+            <footer>
+                <button id="but_obs" class="btn btn-info" type="button">Форма обратной связи</button>
+
+            </footer>
+              <div style="text-align:right;">
+          <button type="button" id="close_but">Закрыть</button>
+      </div>
+            <form id="contact_form" accept-charset="UTF-8">
+
+
+                  <div>
+                <label>Ваше имя:</label>
+                <input type="text" id="us_name" name="name">
+
+                 </div>
+        <div>
+                <label>Ваша почта:</label>
+                <input type="email" id="us_email" name="email">
+
+                 </div>
+        <div>
+                <label>Ваш комментарий</label>
+                <textarea id="us_comment" name="comment">
 
             </textarea>
-            
-     <!--   </div>
-        <div>-->
-            <label>С политикой обработки персональных данных согласен</label>
-           <input type="checkbox" id="us_policy" name="policy"> 
-       <!-- </div>
-        <div>-->
-            <button type="submit" class="btn btn-primary" id="b_sumb">Отправить</button>
-     <!--  </div>-->
-        </form>
-<div style="display:none ;" id="result_div">
-         <label class="btn btn-info" id="out_message"></label>
-</div>
-    </body>
 
-    <script src="Задание8.js"></script>
-    <script>
-        formcarry({
-                form: "bBtSOX2W6",
-                // id or the class name of the form element, only form element allowed
-                // works with css selectors
-                // # <= for id
-                // . <= for class
-                element: "#contact_form",
-                extraData: {
-                    // add whatever you want
-                    screenSize: window.screen.width + " " + window.screen.height,
-                    language: window.navigator.language,
-                },
-                // Success callback, you can show alert messages
-                // or redirect the user in this function
-                onSuccess: function (response) {
-                    localStorage.removeItem("user_name");
-                    localStorage.removeItem("user_mail");
-                    localStorage.removeItem("user_comment");
-                    CLOSE_FORM();
-                    CLEAR_FORM();
-                    var rf = document.getElementById("result_div");
-                    rf.style = "display:block";
-                    let f = document.getElementById("out_message");
-    f.textContent="Ваше сообщение принято";
-                    //alert(response)
-                },
-                // Error callback, a good place to show errors 🗿
-                onError: function (error) {
-                   // alert(error)
-                    CLOSE_FORM();
-                 //   CLEAR_FORM()
-                    var rf = document.getElementById("result_div");
-                    rf.style = "display:block";
-                   let f = document.getElementById("out_message");
-    f.textContent="Неудалось отправить , повторите попытку.";
-                }
-            });
-        </script>
-    </script>
+                   </div>
+        <div>
+                <label>С политикой обработки персональных данных согласен</label>
+                <input type="checkbox" id="us_policy" name="policy">
+                </div>
+        <div>
+                <button type="submit" class="btn btn-primary" id="b_sumb">Отправить</button>
+                  </div>
+            </form>
+            <div style="display:none ;" id="result_div">
+                <label class="btn btn-info" id="out_message"></label>
+            </div>
+
+
+            <script src="Задание8.js"></script>
+            <script>
+                formcarry({
+                    form: "bBtSOX2W6",
+                    // id or the class name of the form element, only form element allowed
+                    // works with css selectors
+                    // # <= for id
+                    // . <= for class
+                    element: "#contact_form",
+                    extraData: {
+                        // add whatever you want
+                        screenSize: window.screen.width + " " + window.screen.height,
+                        language: window.navigator.language,
+                    },
+                    // Success callback, you can show alert messages
+                    // or redirect the user in this function
+                    onSuccess: function (response) {
+                        localStorage.removeItem("user_name");
+                        localStorage.removeItem("user_mail");
+                        localStorage.removeItem("user_comment");
+                        CLOSE_FORM();
+                        CLEAR_FORM();
+                        var rf = document.getElementById("result_div");
+                        rf.style = "display:block";
+                        let f = document.getElementById("out_message");
+                        f.textContent = "Ваше сообщение принято";
+                        history.pushState({ op: 2 }, "title 1", "?op=2");
+                        history.forward();
+                        //alert(response)
+                    },
+                    // Error callback, a good place to show errors 🗿
+                    onError: function (error) {
+                        // alert(error)
+                        CLOSE_FORM();
+                        //   CLEAR_FORM()
+                        history.pushState({ op: 2 }, "title 1", "?op=2");
+                        history.forward();
+                        var rf = document.getElementById("result_div");
+                        rf.style = "display:block";
+                        let f = document.getElementById("out_message");
+                        f.textContent = "Неудалось отправить , повторите попытку.";
+                    }
+                });
+            </script>
+        </body>
 </html>
