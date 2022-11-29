@@ -37,28 +37,29 @@
           <button type="button" id="close_but">Закрыть</button>
       </div>
             <form id="contact_form" accept-charset="UTF-8">
-
+                <span id="cesh_mes"></span>
 
                   <div>
                 <label>Ваше имя:</label>
                 <input type="text" id="us_name" name="name">
-
+                <span id="sp_name"></span>
                  </div>
         <div>
                 <label>Ваша почта:</label>
                 <input type="email" id="us_email" name="email">
-
+<span id="sp_email"></span>
                  </div>
         <div>
                 <label>Ваш комментарий</label>
                 <textarea id="us_comment" name="comment">
 
             </textarea>
-
+<span id="sp_comment"></span>
                    </div>
         <div>
                 <label>С политикой обработки персональных данных согласен</label>
                 <input type="checkbox" id="us_policy" name="policy">
+                <span id="sp_policy"></span>
                 </div>
         <div>
                 <button type="submit" class="btn btn-primary" id="b_sumb">Отправить</button>
@@ -86,17 +87,45 @@
                     // Success callback, you can show alert messages
                     // or redirect the user in this function
                     onSuccess: function (response) {
-                        localStorage.removeItem("user_name");
-                        localStorage.removeItem("user_mail");
-                        localStorage.removeItem("user_comment");
+                        let f = document.getElementById("out_message");
+                         var us_n = document.getElementById("us_name");
+                        if (!CONTAINS_CHARS(String(us_n.value))) {
+                          
+                             localStorage.setItem("cesh_err", "имя пользователя недолжно быть пустым");
+                            return false;
+                        }
+                        var us_com = document.getElementById("us_comment");
+                        if (!CONTAINS_CHARS(String(us_com.value))) {
+                            alert(CONTAINS_CHARS(String(us_com.value)));
+                             localStorage.setItem("cesh_err", "Коментарий пользователя недолжен быть пустым");
+                            return false;
+                        }
+                        var us_mail = document.getElementById("us_email");
+                        if (us_mail.value == null || String(us_mail.value) == "") {
+                            
+                         
+                            localStorage.setItem("cesh_err", "Email пользователя недолжен быть пустым");
+                            return false;
+                        }
+                        var us_poli = document.getElementById("us_policy");
+                        if (Boolean(us_poli.value) != true) {
+                           
+                          
+                             localStorage.setItem("cesh_err", "Вы недали согласие на обработку данных");
+                            return false;
+                        }
                         CLOSE_FORM();
                         CLEAR_FORM();
                         var rf = document.getElementById("result_div");
                         rf.style = "display:block";
-                        let f = document.getElementById("out_message");
+                        
                         f.textContent = "Ваше сообщение принято";
                         history.pushState({ op: 2 }, "title 1", "?op=2");
-                        history.forward();
+
+                        history.forward(); 
+                        localStorage.removeItem("user_name");
+                        localStorage.removeItem("user_mail");
+                        localStorage.removeItem("user_comment");
                         //alert(response)
                     },
                     // Error callback, a good place to show errors 🗿
@@ -109,6 +138,9 @@
                         var rf = document.getElementById("result_div");
                         rf.style = "display:block";
                         let f = document.getElementById("out_message");
+                        if(f.textContent==null){
+                            f.textContent="";
+                        }
                         f.textContent = "Неудалось отправить , повторите попытку.";
                     }
                 });
